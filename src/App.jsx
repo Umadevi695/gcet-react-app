@@ -18,8 +18,8 @@ function App() {
   return (
     <div>
       <AppContext.Provider value={{ users, setUsers, user, setUser }}>
-        <BrowserRouter></BrowserRouter>
-        <Header />
+        <BrowserRouter>
+          <Header />
           <Routes>
             <Route index element={<Product />} />
             <Route path="/" element={<Product />}></Route>
