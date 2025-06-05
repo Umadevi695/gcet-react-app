@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { AppContext } from "../App";
 import axios from "axios";
-import "./Product.css";
+//import "./Product.css";
 export default function Product() {
   const { user, products, setProducts, cart, setCart } = useContext(AppContext);
   // const [products, setProducts] = useState([]);
@@ -21,6 +21,19 @@ export default function Product() {
 
   return (
     <div>
+      <style>{`
+        .App-Product-Row {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .App-Product-Row div {
+          padding: 5px;
+          margin: 5px;
+          border: 1px solid gray;
+        }
+      `}</style>
       <h3>WELCOME {user.name}! </h3>
       <div className="App-Product-Row">
         {products &&
