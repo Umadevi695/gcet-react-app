@@ -31,23 +31,23 @@ export default function Login() {
     <div style={{ margin: "30px" }}>
       <h3>Login</h3>
       {msg}
-      <form>
-        <p>
-          <input
-            type="text"
-            placeholder="Email address"
-            onChange={(e) => setUser({ ...user, email: e.target.value })}
-          />
-        </p>
-        <p>
-          <input
-            type="password"
-            placeholder="Password"
-            onChange={(e) => setUser({ ...user, pass: e.target.value })}
-          />
-        </p>
-        <button onClick={handleSubmit}>Submit</button>
-      </form>
+
+      <p>
+        <input
+          type="text"
+          placeholder="Email address"
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
+        />
+      </p>
+      <p>
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setUser({ ...user, pass: e.target.value })}
+        />
+      </p>
+      <button onClick={handleSubmit}>Submit</button>
+
       <p>
         <button onClick={goToRegister}>Create Account</button>
       </p>
