@@ -21,7 +21,7 @@ export default function Product() {
 
   return (
     <div>
-      <h3>Welcome {user.name}! </h3>
+      <h3>WELCOME {user.name}! </h3>
       <div className="App-Product-Row">
         {products &&
           products.map((value) => (
