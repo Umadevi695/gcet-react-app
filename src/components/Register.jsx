@@ -2,13 +2,21 @@ import React, { useState } from "react";
 import { AppContext } from "../App";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 export default function Register() {
   const { users, setUsers } = useContext(AppContext);
   const [user, setUser] = useState({});
   const Navigate = useNavigate();
-  const handleSubmit = () => {
-    setUsers([...users, user]);
-    Navigate("/login");
+  const API = import.meta.env.VITE_API_URL;
+  const handleSubmit = async () => {
+    //setUsers([...users, user]);
+    try {
+      const url = `${API}/users/register`;
+      await axios.post(url, user);
+      Navigate("/login");
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div style={{ margin: "30px" }}>
