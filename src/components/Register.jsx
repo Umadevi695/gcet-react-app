@@ -19,30 +19,33 @@ export default function Register() {
     }
   };
   return (
-    <div style={{ margin: "30px" }}>
+    <div style={{ padding: "30px", display: "flex", justifyContent: "center" }}>
+      <div style={{ width: "100%", maxWidth: "500px" }}></div>
       <h3>Register</h3>
-      <p>
-        <input
-          type="text"
-          placeholder="Name"
-          onChange={(e) => setUser({ ...user, name: e.target.value })}
-        />
-      </p>
-      <p>
-        <input
-          type="text"
-          placeholder="Email address"
-          onChange={(e) => setUser({ ...user, email: e.target.value })}
-        />
-      </p>
-      <p>
-        <input
-          type="password"
-          placeholder="New Password"
-          onChange={(e) => setUser({ ...user, pass: e.target.value })}
-        />
-      </p>
-      <button onClick={handleSubmit}>Submit</button>
+      <form>
+        <p>
+          <input
+            type="text"
+            placeholder="Name"
+            onChange={(e) => setUser({ ...user, name: e.target.value })}
+          />
+        </p>
+        <p>
+          <input
+            type="text"
+            placeholder="Email address"
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
+          />
+        </p>
+        <p>
+          <input
+            type="password"
+            placeholder="New Password"
+            onChange={(e) => setUser({ ...user, pass: e.target.value })}
+          />
+        </p>
+        <button onClick={handleSubmit}>Submit</button>
+      </form>
       <hr />
       {users &&
         users.map((value) => (

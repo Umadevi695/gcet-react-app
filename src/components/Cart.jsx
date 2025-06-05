@@ -44,7 +44,7 @@ export default function Cart() {
         products.map(
           (value) =>
             cart[value.pid] && (
-              <div key={value.pid}>
+              <div className="cart-item" key={value.pid}>
                 {value.pid}
                 {value.name}-{value.price}-
                 <button onClick={() => decrement(value.pid)}>-</button>
