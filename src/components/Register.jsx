@@ -20,39 +20,40 @@ export default function Register() {
   };
   return (
     <div style={{ padding: "30px", display: "flex", justifyContent: "center" }}>
-      <div style={{ width: "100%", maxWidth: "500px" }}></div>
-      <h3>Register</h3>
-      <form>
-        <p>
-          <input
-            type="text"
-            placeholder="Name"
-            onChange={(e) => setUser({ ...user, name: e.target.value })}
-          />
-        </p>
-        <p>
-          <input
-            type="text"
-            placeholder="Email address"
-            onChange={(e) => setUser({ ...user, email: e.target.value })}
-          />
-        </p>
-        <p>
-          <input
-            type="password"
-            placeholder="New Password"
-            onChange={(e) => setUser({ ...user, pass: e.target.value })}
-          />
-        </p>
-        <button onClick={handleSubmit}>Submit</button>
-      </form>
-      <hr />
-      {users &&
-        users.map((value) => (
-          <li>
-            {value.name}-{value.email}-{value.pass}
-          </li>
-        ))}
+      <div style={{ width: "100%", maxWidth: "500px" }}>
+        <h3>Register</h3>
+        <form>
+          <p>
+            <input
+              type="text"
+              placeholder="Name"
+              onChange={(e) => setUser({ ...user, name: e.target.value })}
+            />
+          </p>
+          <p>
+            <input
+              type="text"
+              placeholder="Email address"
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
+            />
+          </p>
+          <p>
+            <input
+              type="password"
+              placeholder="New Password"
+              onChange={(e) => setUser({ ...user, pass: e.target.value })}
+            />
+          </p>
+          <button onClick={handleSubmit}>Submit</button>
+        </form>
+        <hr />
+        {users &&
+          users.map((value) => (
+            <li>
+              {value.name}-{value.email}-{value.pass}
+            </li>
+          ))}
+      </div>
     </div>
   );
 }
