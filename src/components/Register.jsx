@@ -9,24 +9,11 @@ export default function Register() {
   const Navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
 
-  /*const handleSubmit = async () => {
+  const handleSubmit = async () => {
     //setUsers([...users, user]);
     try {
       const url = `${API}/users/register`;
       await axios.post(url, user);
-      Navigate("/login");
-    } catch (err) {
-      console.log(err);
-    }
-  };*/
-  const handleSubmit = async () => {
-    try {
-      const url = `${API}/users/register`;
-      await axios.post(url, user, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
       Navigate("/login");
     } catch (err) {
       console.log(err);

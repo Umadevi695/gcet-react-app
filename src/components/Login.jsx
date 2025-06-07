@@ -9,42 +9,18 @@ export default function Login() {
   const Navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
 
-  /*const handleSubmit = async () => {
+  const handleSubmit = async () => {
     // const found = users.find(
     //   (value) => value.email === user.email && value.pass === user.pass
     // );
     const url = `${API}/users/login`;
     const found = await axios.post(url, user);
-    
+
     console.log(found);
     if (found.data.email) {
       setUser(found.data);
       Navigate("/");
     } else {
-      setMsg("Invalid User or Password");
-    }
-  };*/
-
-  const handleSubmit = async () => {
-    const url = `${API}/users/login`;
-
-    try {
-      const found = await axios.post(url, user, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      console.log(found.data);
-
-      if (found.data.user) {
-        setUser(found.data.user);
-        Navigate("/");
-      } else {
-        setMsg("Invalid User or Password");
-      }
-    } catch (error) {
-      console.error("Login failed:", error);
       setMsg("Invalid User or Password");
     }
   };
