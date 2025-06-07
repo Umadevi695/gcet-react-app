@@ -8,7 +8,8 @@ export default function Register() {
   const [user, setUser] = useState({});
   const Navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
-  const handleSubmit = async () => {
+
+  /*const handleSubmit = async () => {
     //setUsers([...users, user]);
     try {
       const url = `${API}/users/register`;
@@ -17,7 +18,21 @@ export default function Register() {
     } catch (err) {
       console.log(err);
     }
+  };*/
+  const handleSubmit = async () => {
+    try {
+      const url = `${API}/users/register`;
+      await axios.post(url, user, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      Navigate("/login");
+    } catch (err) {
+      console.log(err);
+    }
   };
+
   return (
     <div style={{ padding: "30px", display: "flex", justifyContent: "center" }}>
       <div style={{ width: "100%", maxWidth: "500px" }}>
