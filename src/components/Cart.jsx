@@ -47,7 +47,7 @@ export default function Cart() {
     Navigate("/login");
   };
   return (
-    <div>
+    <div className="cart-container">
       My Cart
       {products &&
         products.map(
