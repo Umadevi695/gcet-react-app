@@ -8,7 +8,6 @@ export default function Login() {
   const [msg, setMsg] = useState();
   const Navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
-
   const handleSubmit = async () => {
     // const found = users.find(
     //   (value) => value.email === user.email && value.pass === user.pass
@@ -16,9 +15,8 @@ export default function Login() {
     const url = `${API}/users/login`;
     const found = await axios.post(url, user);
 
-    console.log(found);
-    if (found.data.email) {
-      setUser(found.data);
+    if (found.data.token) {
+      setUser({ ...found.data.result, token: found.data.token });
       Navigate("/");
     } else {
       setMsg("Invalid User or Password");
@@ -33,7 +31,6 @@ export default function Login() {
     <div style={{ margin: "30px" }}>
       <h3>Login</h3>
       {msg}
-
       <p>
         <input
           type="text"
@@ -49,7 +46,6 @@ export default function Login() {
         />
       </p>
       <button onClick={handleSubmit}>Submit</button>
-
       <p>
         <button onClick={goToRegister}>Create Account</button>
       </p>
